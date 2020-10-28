@@ -1,6 +1,7 @@
 import React from 'react'
-import SidePanel from './components/SidePanel'
+import Sidebar from './components/Sidebar'
 import Feed from './components/Feed'
+import Widgegts from './components/Widget'
 import './App.css';
 
 function App() {
@@ -8,10 +9,11 @@ function App() {
     <div className="App">
       <div className="App__container">
         {/* side panel with the icons */}
-          <SidePanel />
+          <Sidebar />
         {/* main section */}
           <Feed />
         {/* aside section live news */}
+        <Widgegts />
       </div>
     </div>
   );

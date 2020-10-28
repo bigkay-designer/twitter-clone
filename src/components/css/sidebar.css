@@ -1,0 +1,42 @@
+.sidebar__container {
+  padding: 20px;
+}
+
+.sidebar__container .showSidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.sidebar__container .showSidebar h3 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.sidebar__container .showSidebar .showSidebar__icons {
+  padding: 20px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.sidebar__container .showSidebar:hover {
+  background-color: var(--twitter-bg);
+  border-radius: 30px;
+}
+
+.sidebar__container .sidebar__btn {
+  background-color: var(--twitter-color) !important;
+  border-radius: 30px;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 900;
+}
+/*# sourceMappingURL=sidebar.css.map */
