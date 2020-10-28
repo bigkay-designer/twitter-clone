@@ -1,0 +1,228 @@
+.sidePanel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidePanel .sidePanel__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.sidePanel .sidePanel__container .sidePanel__tag {
+  list-style: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+}
+
+.sidePanel .sidePanel__container .sidePanel__tag .sidePanel__icons {
+  height: 100%;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+  margin: 20px 30px;
+  color: black;
+  margin-right: 15px;
+}
+
+.sidePanel .sidePanel__container .sidePanel__tag span {
+  text-transform: capitalize;
+  font-size: 18px;
+  line-height: 1.5em;
+  padding-right: 20px;
+}
+
+.sidePanel .sidePanel__container .sidePanel__tag .sidePanel__icons--blue {
+  color: #1da1f2;
+}
+
+.sidePanel .sidePanel__container .sidePanel__tag:hover {
+  background-color: rgba(154, 201, 231, 0.3);
+  border-radius: 25px;
+}
+
+.sidePanel .sidePanel__container button {
+  width: 100%;
+  background-color: #1da1f2;
+  border-radius: 25px;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+
+.feed {
+  border: 1px solid rgba(160, 160, 160, 0.5);
+}
+
+.feed .feed__container .feed__title {
+  border-bottom: 1px solid rgba(160, 160, 160, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.feed .feed__container .feed__title h1 {
+  text-transform: capitalize;
+  font-size: 18px;
+  color: #1b1a1a;
+  letter-spacing: 1px;
+}
+
+.feed .feed__container .feed__title .feed__title--icon {
+  color: #1da1f2;
+}
+
+.feed .feed__container .feed__title .feed__title--icon:hover {
+  background-color: rgba(118, 185, 226, 0.4);
+  border-radius: 25px;
+}
+
+.feed .feed__container .feed__tweet {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "ti ti" "icon btn";
+  border-bottom: 5px solid rgba(141, 141, 141, 0.4);
+  padding: 10px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ti;
+  grid-row-end: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 15px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .feed__input {
+  margin-left: 25px;
+  color: #a8a8a8;
+  border: none;
+  padding: 10px 0;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .feed__input::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .feed__input:-ms-input-placeholder {
+  font-size: 18px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .feed__input::-ms-input-placeholder {
+  font-size: 18px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .feed__input::placeholder {
+  font-size: 18px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__title .tweet__icon {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  color: #221c1c;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__attachment {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: icon;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__attachment .tweet__attachment__icon {
+  margin: 0 10px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: rgba(29, 161, 242, 0.7);
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__attachment .gif {
+  border: 2px solid rgba(0, 155, 252, 0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__btn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: btn;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__btn button {
+  padding: 10px 30px;
+  text-transform: capitalize;
+  font-size: 16px;
+  background-color: rgba(29, 161, 242, 0.5);
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */
