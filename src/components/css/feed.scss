@@ -1,10 +1,17 @@
-
 .feed {
-  border: 1px solid rgba(160, 160, 160, 0.5);
-
+  flex: 0.4;
+  border: 1px solid var(--twitter-borderBottom);
+  min-width: fit-content;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   .feed__container {
     .feed__title {
-      border-bottom: 1px solid rgba(160, 160, 160, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #fff;
+      border-bottom: 1px solid var(--twitter-borderBottom);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -17,6 +24,7 @@
         letter-spacing: 1px;
       }
       .feed__title--icon {
+        cursor: pointer;
         color: rgba(29, 161, 242, 1);
         &:hover {
           background-color: rgba(118, 185, 226, 0.4);
@@ -31,7 +39,7 @@
       grid-template-areas:
         "ti ti"
         "icon btn";
-      border-bottom: 5px solid rgba(141, 141, 141, 0.4);
+      border-bottom: 5px solid var(--twitter-borderBottom);
       padding: 10px;
       .feed__tweet__title {
         grid-area: ti;
@@ -65,6 +73,7 @@
           margin: 0 10px;
           transform: scale(1.1);
           color: rgba(29, 161, 242, 0.7);
+          cursor: pointer;
         }
         .gif {
           border: 2px solid rgba(0, 155, 252, 0.7);
@@ -76,17 +85,24 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        button {
-          padding: 10px 30px;
+        .feed__tweet__btn {
           text-transform: capitalize;
-          font-size: 16px;
-          background-color: rgba(29, 161, 242, 0.5);
-          border-radius: 25px;
-          border: none;
-          color: #fff;
+          font-size: 16px !important;
+          background-color: var(--twitter-color) !important;
+          border-radius: 30px !important;
+          border: none !important;
+          color: #fff !important;
           cursor: pointer;
+
+          &:hover {
+            background-color: var(--twitter-bg) !important;
+          }
         }
       }
     }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

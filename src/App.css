@@ -1,18 +1,19 @@
 * {
   margin: 0;
   padding: 0;
-  object-fit: contain;
 }
 
 body {
-  --twitter-color: rgba(29,161,242,1.00);
-  --twitter-bg:rgba(29,161,242,0.4);
+  --twitter-color: rgba(29, 161, 242, 1);
+  --twitter-bg: rgba(136, 207, 252, 0.4);
+  --twitter-borderBottom: rgb(225, 232, 235);
 }
 
-.App__container {
+.App {
   display: flex;
   height: 100vh;
   max-width: 1300px;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
 }

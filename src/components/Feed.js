@@ -1,6 +1,8 @@
 import React from 'react'
-import './css/main.css'
+import './css/feed.css'
+import {Button} from '@material-ui/core'
 import {StarOutlined, CropOriginal, InsertEmoticon, Schedule, GifOutlined, AccountCircle} from '@material-ui/icons';
+import Posts from './Posts'
 function Feed() {
     return (
         <div className="feed">
@@ -21,8 +23,17 @@ function Feed() {
                         <Schedule className="tweet__attachment__icon" /> 
                     </div>
                     <div className="feed__tweet__btn">
-                        <button>tweet</button>
+                        <Button className="feed__tweet__btn" variant="outlined" >tweet</Button>
                     </div>
+                </div>
+                <div className="feed__posts">
+                    <Posts />
+                    <Posts />
+                    <Posts />
+                    <Posts />
+                    <Posts />
+                    <Posts />
+                    <Posts />
                 </div>
             </div>
 

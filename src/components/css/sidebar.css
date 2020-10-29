@@ -1,8 +1,17 @@
-.sidebar__container {
-  padding: 20px;
+.sidebar {
+  -webkit-box-flex: 0.3;
+      -ms-flex: 0.3;
+          flex: 0.3;
+  margin-top: 10px;
+  padding: 0 20px 0 20px;
 }
 
-.sidebar__container .showSidebar {
+.sidebar .sidebar__container {
+  padding: 20px;
+  margin-right: 30px;
+}
+
+.sidebar .sidebar__container .showSidebar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,24 +24,35 @@
   cursor: pointer;
 }
 
-.sidebar__container .showSidebar h3 {
+.sidebar .sidebar__container .showSidebar h3 {
   font-size: 18px;
   text-transform: capitalize;
   font-weight: 800;
+  margin-right: 20px;
 }
 
-.sidebar__container .showSidebar .showSidebar__icons {
+.sidebar .sidebar__container .showSidebar .showSidebar__icons {
   padding: 20px;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-.sidebar__container .showSidebar:hover {
+.sidebar .sidebar__container .showSidebar:hover {
   background-color: var(--twitter-bg);
   border-radius: 30px;
 }
 
-.sidebar__container .sidebar__btn {
+.sidebar .sidebar__container .sidebar__twitter {
+  color: var(--twitter-color);
+  padding: 0 20px 0;
+}
+
+.sidebar .sidebar__container .showSidebar__active {
+  color: var(--twitter-color);
+}
+
+.sidebar .sidebar__container .sidebar__btn {
+  margin-top: 30px;
   background-color: var(--twitter-color) !important;
   border-radius: 30px;
   color: #fff !important;

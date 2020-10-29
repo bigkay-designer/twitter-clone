@@ -7,14 +7,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className="App__container">
-        {/* side panel with the icons */}
-          <Sidebar />
-        {/* main section */}
-          <Feed />
-        {/* aside section live news */}
-        <Widgegts />
-      </div>
+      <Sidebar />
+      <Feed />
+      <Widgegts />
     </div>
   );
 }

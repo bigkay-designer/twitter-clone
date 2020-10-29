@@ -1,9 +1,23 @@
 .feed {
-  border: 1px solid rgba(160, 160, 160, 0.5);
+  -webkit-box-flex: 0.4;
+      -ms-flex: 0.4;
+          flex: 0.4;
+  border: 1px solid var(--twitter-borderBottom);
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .feed .feed__container .feed__title {
-  border-bottom: 1px solid rgba(160, 160, 160, 0.5);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 1px solid var(--twitter-borderBottom);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,6 +39,7 @@
 }
 
 .feed .feed__container .feed__title .feed__title--icon {
+  cursor: pointer;
   color: #1da1f2;
 }
 
@@ -41,7 +56,7 @@
   -ms-grid-rows: auto;
       grid-template-rows: auto;
       grid-template-areas: "ti ti" "icon btn";
-  border-bottom: 5px solid rgba(141, 141, 141, 0.4);
+  border-bottom: 5px solid var(--twitter-borderBottom);
   padding: 10px;
 }
 
@@ -112,6 +127,7 @@
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   color: rgba(29, 161, 242, 0.7);
+  cursor: pointer;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__attachment .gif {
@@ -135,14 +151,21 @@
           align-items: flex-end;
 }
 
-.feed .feed__container .feed__tweet .feed__tweet__btn button {
-  padding: 10px 30px;
+.feed .feed__container .feed__tweet .feed__tweet__btn .feed__tweet__btn {
   text-transform: capitalize;
-  font-size: 16px;
-  background-color: rgba(29, 161, 242, 0.5);
-  border-radius: 25px;
-  border: none;
-  color: #fff;
+  font-size: 16px !important;
+  background-color: var(--twitter-color) !important;
+  border-radius: 30px !important;
+  border: none !important;
+  color: #fff !important;
   cursor: pointer;
 }
-/*# sourceMappingURL=main.css.map */
+
+.feed .feed__container .feed__tweet .feed__tweet__btn .feed__tweet__btn:hover {
+  background-color: var(--twitter-bg) !important;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=feed.css.map */

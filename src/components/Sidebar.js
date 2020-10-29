@@ -9,8 +9,8 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebar__container">
-                <ShowSidebar  Icons={Twitter} />
-                <ShowSidebar text="home" Icons={HomeOutlined} />
+                <Twitter className="sidebar__twitter" />
+                <ShowSidebar active text="home" Icons={HomeOutlined} />
                 <ShowSidebar text="explore" Icons={Search} />
                 <ShowSidebar text="notifications" Icons={Notifications} />
                 <ShowSidebar text="messages" Icons={MailOutline} />
