@@ -1,16 +1,20 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
-import Feed from './components/Feed'
-import Widgegts from './components/Widget'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from './components/Home'
 import './App.css';
+
+import Create from './create'
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-      <Feed />
-      <Widgegts />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          {/* <Route path="/test" component={Create} /> */}
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

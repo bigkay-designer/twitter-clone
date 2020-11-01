@@ -55,7 +55,7 @@
       grid-template-columns: auto;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "ti ti" "icon btn";
+      grid-template-areas: "ti ti" "file file" "icon btn";
   border-bottom: 5px solid var(--twitter-borderBottom);
   padding: 10px;
 }
@@ -80,25 +80,30 @@
 
 .feed .feed__container .feed__tweet .feed__tweet__title .feed__input {
   margin-left: 25px;
-  color: #a8a8a8;
+  color: #1d1c1c;
   border: none;
-  padding: 10px 0;
+  padding: 10px;
+  outline: none;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__title .feed__input::-webkit-input-placeholder {
   font-size: 18px;
+  color: #a8a8a8;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__title .feed__input:-ms-input-placeholder {
   font-size: 18px;
+  color: #a8a8a8;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__title .feed__input::-ms-input-placeholder {
   font-size: 18px;
+  color: #a8a8a8;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__title .feed__input::placeholder {
   font-size: 18px;
+  color: #a8a8a8;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__title .tweet__icon {
@@ -107,8 +112,21 @@
   color: #221c1c;
 }
 
-.feed .feed__container .feed__tweet .feed__tweet__attachment {
+.feed .feed__container .feed__tweet .feed__imageFile {
   -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: file;
+  width: 100%;
+}
+
+.feed .feed__container .feed__tweet .feed__imageFile img {
+  border-radius: 20px;
+  height: 300px;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__attachment {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: icon;
   display: -webkit-box;
@@ -117,9 +135,13 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.feed .feed__container .feed__tweet .feed__tweet__attachment input {
+  display: none;
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__attachment .tweet__attachment__icon {
@@ -137,7 +159,7 @@
 }
 
 .feed .feed__container .feed__tweet .feed__tweet__btn {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: btn;
   display: -webkit-box;

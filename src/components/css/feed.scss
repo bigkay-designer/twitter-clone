@@ -38,6 +38,7 @@
       grid-template-rows: auto;
       grid-template-areas:
         "ti ti"
+        "file file"
         "icon btn";
       border-bottom: 5px solid var(--twitter-borderBottom);
       padding: 10px;
@@ -50,12 +51,14 @@
         padding: 15px;
         .feed__input {
           margin-left: 25px;
-          color: rgb(168, 168, 168);
+          color: rgb(29, 28, 28);
           border: none;
-          padding: 10px 0;
+          padding: 10px;
+          outline: none;
 
           &::placeholder {
             font-size: 18px;
+            color: rgb(168, 168, 168);
           }
         }
         .tweet__icon {
@@ -63,11 +66,24 @@
           color: rgb(34, 28, 28);
         }
       }
+
+      .feed__imageFile {
+        grid-area: file;
+        width: 100%;
+        img {
+          border-radius: 20px;
+          height: 300px;
+        }
+      }
       .feed__tweet__attachment {
         grid-area: icon;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-end;
+
+        input {
+          display: none;
+        }
 
         .tweet__attachment__icon {
           margin: 0 10px;

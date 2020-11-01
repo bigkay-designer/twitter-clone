@@ -10,13 +10,16 @@
       .posts__headerText {
         h3 {
           font-size: 18px;
-          span {
+          .span {
             padding-left: 10px;
             color: rgb(173, 173, 173);
           }
           .posts__verified {
             color: var(--twitter-color) !important;
             font-size: 14px !important;
+          }
+          .posts__verified--none {
+            display: none;
           }
         }
       }

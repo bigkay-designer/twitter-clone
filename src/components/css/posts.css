@@ -20,7 +20,7 @@
   font-size: 18px;
 }
 
-.posts .posts__body .posts__header .posts__headerText h3 span {
+.posts .posts__body .posts__header .posts__headerText h3 .span {
   padding-left: 10px;
   color: #adadad;
 }
@@ -28,6 +28,10 @@
 .posts .posts__body .posts__header .posts__headerText h3 .posts__verified {
   color: var(--twitter-color) !important;
   font-size: 14px !important;
+}
+
+.posts .posts__body .posts__header .posts__headerText h3 .posts__verified--none {
+  display: none;
 }
 
 .posts .posts__body .posts__header .posts__description p {
