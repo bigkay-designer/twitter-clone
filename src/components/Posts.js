@@ -1,16 +1,15 @@
 import React from 'react'
 import { Avatar } from '@material-ui/core';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import {ChatBubbleOutline,FavoriteBorder, Publish , Repeat} from '@material-ui/icons'
+import {ChatBubbleOutline,FavoriteBorder, DeleteOutline , Repeat} from '@material-ui/icons'
 import './css/posts.css'
-function Posts( {displayName,username,verified,text,image,avatar, key}) {
-        
+function Posts( {displayName,username,verified,text,image,avatar, keys, deletePost}) {
     return (
-        <div className="posts">
+        <div className="posts"  key={keys}>
             <div className="posts__avatar">
                 <Avatar src={avatar} />
             </div>
-            <div className="posts__body" key={key}>
+            <div className="posts__body">
                 <div className="posts__header">
                     <div className="posts__headerText">
                         <h3>{displayName}
@@ -19,18 +18,16 @@ function Posts( {displayName,username,verified,text,image,avatar, key}) {
                         </h3>
                     </div>
                     <div className="posts__description">
-                        <p> {text} </p>
+                        <span> {text} </span>
                     </div>
                 </div>
-                <img 
-                src={image} 
-                alt="gif"/>
+                {image ? <img src={image} alt="gif"/> : null }
 
                 <div className="posts__icons">
                     <ChatBubbleOutline />
                     <Repeat />
                     <FavoriteBorder />
-                    <Publish />
+                    <span onClick={deletePost}> <DeleteOutline /> </span>
                 </div>
             </div>
         </div>

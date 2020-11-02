@@ -7,6 +7,7 @@
     flex: 1;
     padding: 10px;
     .posts__header {
+      width: 420px;
       .posts__headerText {
         h3 {
           font-size: 18px;
@@ -24,13 +25,17 @@
         }
       }
       .posts__description {
-        p {
-          margin: 10px 0;
+        margin: 10px 0;
+        line-height: 1.5em;
+        span {
+          word-break: break-all;
           font-size: 14px;
         }
       }
     }
     img {
+      width: 420px;
+      max-height: 500px;
       border-radius: 20px;
     }
     .posts__icons {

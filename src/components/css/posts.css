@@ -16,6 +16,10 @@
   padding: 10px;
 }
 
+.posts .posts__body .posts__header {
+  width: 420px;
+}
+
 .posts .posts__body .posts__header .posts__headerText h3 {
   font-size: 18px;
 }
@@ -34,12 +38,19 @@
   display: none;
 }
 
-.posts .posts__body .posts__header .posts__description p {
+.posts .posts__body .posts__header .posts__description {
   margin: 10px 0;
+  line-height: 1.5em;
+}
+
+.posts .posts__body .posts__header .posts__description span {
+  word-break: break-all;
   font-size: 14px;
 }
 
 .posts .posts__body img {
+  width: 420px;
+  max-height: 500px;
   border-radius: 20px;
 }
 

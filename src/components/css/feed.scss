@@ -1,5 +1,5 @@
 .feed {
-  flex: 0.4;
+  flex: 0.6;
   border: 1px solid var(--twitter-borderBottom);
   min-width: fit-content;
   overflow-y: scroll;
@@ -53,11 +53,11 @@
           margin-left: 25px;
           color: rgb(29, 28, 28);
           border: none;
-          padding: 10px;
           outline: none;
-
+          font-size: 20px;
+          width: 100%;
+          word-break: break-all;
           &::placeholder {
-            font-size: 18px;
             color: rgb(168, 168, 168);
           }
         }
@@ -69,12 +69,17 @@
 
       .feed__imageFile {
         grid-area: file;
-        width: 100%;
-        img {
-          border-radius: 20px;
-          height: 300px;
+        border-radius: 20px;
+        .feed__imageFile--close {
+          color: #fff;
+          float: right;
+          clear: both;
+          padding: 7px;
+          font-size: 32px;
+          cursor: pointer;
         }
       }
+
       .feed__tweet__attachment {
         grid-area: icon;
         display: flex;
