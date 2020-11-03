@@ -72,7 +72,7 @@ function Feed() {
         } 
         console.log(newPost)
 
-        axios.post('http://localhost:3001/user', newPost)
+        axios.post('http://localhost:3001/', newPost)
         .then(res => {
             const post = res.data
             console.log(post)
