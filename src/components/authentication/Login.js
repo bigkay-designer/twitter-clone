@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Redirect} from "react-router-dom";
 
 import {Button} from '@material-ui/core'
@@ -9,11 +9,6 @@ import axios from 'axios'
 
 import './auth.css'
 function Signup() {
-    const [user, setuser] = useState({
-        username: '',
-        password: '',
-
-    })
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [toHome, setToHome] = useState(false)

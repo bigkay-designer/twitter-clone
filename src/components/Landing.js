@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Redirect} from "react-router-dom";
 import {Button} from '@material-ui/core'
 import {Twitter} from '@material-ui/icons'
@@ -30,10 +30,7 @@ function Landing() {
         setPassword('')
         
     }
-    
-    const mainBg = {
-        background: 'url(https://wallpaperaccess.com/full/1459043.jpg) center center / cover no-repeat'
-    }
+
     return (
         <div className="landing">
             {toHome ? <Redirect to='/home' /> : null }
@@ -43,7 +40,7 @@ function Landing() {
                 <div className="landing__login">
                     <form onSubmit={onSubmitHandler}>
                         <input type="text" placeholder="username" value={username} onChange={e=> setUsername(e.target.value)} />
-                        <input type="password" placeholder="password" value={password} onChange={e=> setPassword(e.target.value)} />
+                        <input type="password" placeholder="password"  value={password} onChange={e=> setPassword(e.target.value)} />
                         <div className="landing__login__btn">
                             <Button variant="outlined" fullWidth className="landing__login__btn" type="submit">Log in</Button>
                         </div>

@@ -7,13 +7,7 @@ import axios from 'axios'
 
 import './auth.css'
 function Signup() {
-    const [user, setuser] = useState({
-        username: '',
-        email: '',
-        password: '',
-        name: '',
-        verified: Boolean
-    })
+
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')

@@ -26,7 +26,7 @@ function Home() {
     return (
         <>
         {data ?
-            <div class="App">
+            <div className="App">
                 <Sidebar />
                 <Feed />
                 <Widgegts />

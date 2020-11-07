@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Redirect} from "react-router-dom";
-import {Twitter, Search, NotificationsOutlined, MailOutline, PersonOutline, MoreHorizRounded, BookmarkBorder, Subject, HomeOutlined, Notifications} from '@material-ui/icons';
+import {Twitter, Search, MailOutline, PersonOutline, MoreHorizRounded, HomeOutlined, Notifications} from '@material-ui/icons';
 import {Button} from '@material-ui/core'
 import ShowSidebar from './ShowSidebar'
 import axios from 'axios'
