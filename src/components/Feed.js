@@ -15,41 +15,54 @@ function Feed() {
         avatar: ''
     })
 
-    const [userData, setUserData] = useState([])
+    const [userPost, setUserPost] = useState([])
+    const [user, setUser] = useState('')
     const [tweetText, setTweetText] = useState('')
     const [tweetImage, setTweetImage] = useState('')
-
     useEffect(()=>{
         const fetchData = () =>{
             axios.get('http://localhost:3001')
             .then(data => {
                 const newPost = data.data
-    
-                setUserData(newPost)
-    
+                setUserPost(newPost)
                 return newPost
             })
             .catch(err => console.log(`error ${err}`))
         }
     
         fetchData()
-    }, [userData])
+    }, [userPost])
 
+    useEffect(()=>{
+        const fetchData = () =>{
+            axios.get('http://localhost:3001/user', {withCredentials: true})
+            .then(res => {
+                setUser(res.data)
+            })
+            .catch(err => console.log(`error ${err}`))
+        }
+    
+        fetchData()
+    }, [])
 
     const deletePostHandler =(e, dataId) => {
         e.preventDefault()
-        axios.delete(`http://localhost:3001/${dataId}`)
-        .then(posts => {
-            console.log(posts)
+        userPost.map(post=>{
+            console.log(post.author.username + ' user '+  user.username)
+            if(user.username = post.author.username){
+                axios.delete(`http://localhost:3001/${dataId}`)
+                .then(posts => {
+                })
+                .catch(err => console.log(`error ${err}`))
+            }else{
+                return console.log('denied')
+            }
         })
-    .   catch(err => console.log(`error ${err}`))
 
     }
 
     const selectFileHandler = (e) =>{
-        console.log(e.target.files)
         setTweetImage(URL.createObjectURL(e.target.files[0]))
-        console.log(tweetImage)
     }
 
     const tweetTextHandler = (e)=>{
@@ -63,25 +76,34 @@ function Feed() {
     const submitHandler = (e)=>{
         e.preventDefault();
         const newPost =  {
-            displayName: 'mohamed',
-            username: 'mohmad__',
+            displayName: user.name,
+            username: user.username,
             verified: true,
             text: tweetText,
             image: tweetImage,
-            avatar: 'https://polightafricafilms.com/wp-content/uploads/2019/07/avatar_afro_guy-512.png'
+            avatar: 'https://polightafricafilms.com/wp-content/uploads/2019/07/avatar_afro_guy-512.png',
+            author: {
+                id:user.id,
+                username: user.username
+            }
         } 
-        console.log(newPost)
 
         axios.post('http://localhost:3001/', newPost)
         .then(res => {
             const post = res.data
-            console.log(post)
-            // setUserData(post)
+            setPost(post)
+            console.log(res.config.data)
         })
         .catch(err => console.log(`error ${err}`))
 
         setTweetImage('')
         setTweetText('')
+    }
+
+    const test = (e, dataId)=>{
+        e.preventDefault()
+
+        alert('Permission denied')
     }
    
     const tweetImageBg = {
@@ -121,7 +143,7 @@ function Feed() {
                     </div>
                     {/* ************************************************************************** */}
                     <div className="feed__posts">
-                        {userData.map(data=>(
+                        {userPost.map(data=>(
                             <Posts 
                                 keys={data._id}
                                 displayName={data.displayName}
@@ -131,6 +153,7 @@ function Feed() {
                                 verified={data.verified}
                                 avatar={data.avatar}
                                 deletePost = {(e)=> deletePostHandler(e, data._id)}
+                                text = {(e)=> test(e, data.id)}
                             />
                         ))}
                     </div>

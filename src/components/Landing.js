@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Redirect} from "react-router-dom";
 import {Button} from '@material-ui/core'
 import {Twitter} from '@material-ui/icons'
 import axios from 'axios'
@@ -7,56 +8,44 @@ import {Link} from 'react-router-dom'
 import './css/landing.css'
 function Landing() {
 
-    const [userLogin, setUserLogin] = useState({
-        username: '',
-        name: '',
-        verified: Boolean
-    })
-    const [loginUsername, setLoginUsername] = useState('')
-    const [loginName, setLoginName] = useState('')
-    const [signupPassword, setSignupPassword] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [toHome, setToHome] = useState(false)
 
-    // useEffect(()=>{
-    //     const fetchData = () =>{
-    //         axios.get('http://localhost:3001/login')
-    //         .then(data => console.log(data))
-    //     }
-    //     fetchData()
-    // }, [])
-    
-    const loginUsernameHandler = (e) =>{
-        setLoginUsername(e.target.value)
-    }
-    const loginNameHandler = (e) =>{
-        setLoginUsername(e.target.value)
-    }
-    const loginPasswordHandler = (e) =>{
-        setSignupPassword(e.target.value)
-    }
-    
-    const onSubmit = (e)=>{
+    const onSubmitHandler = (e)=>{
         e.preventDefault();
 
         let newUser = {
-            username: loginUsername,
-            name: loginName,
-            varified: true
+            username: username,
+            password:password,
         }
+        axios.post('http://localhost:3001/login', newUser, {withCredentials:true})
+        .then(res => {
+            setToHome(true)
+            res.send(res)
+        })
+        .catch(err => `error: ${err}`)
+
+        setUsername('')
+        setPassword('')
+        
     }
+    
     const mainBg = {
         background: 'url(https://wallpaperaccess.com/full/1459043.jpg) center center / cover no-repeat'
     }
     return (
         <div className="landing">
+            {toHome ? <Redirect to='/home' /> : null }
             <div className="landing__main"></div>
 
             <div className="landing__aside">
                 <div className="landing__login">
-                    <form action="#">
-                        <input type="text" placeholder="username" />
-                        <input type="password" placeholder="password" />
+                    <form onSubmit={onSubmitHandler}>
+                        <input type="text" placeholder="username" value={username} onChange={e=> setUsername(e.target.value)} />
+                        <input type="password" placeholder="password" value={password} onChange={e=> setPassword(e.target.value)} />
                         <div className="landing__login__btn">
-                            <Button variant="outlined" fullWidth className="landing__login__btn">Log in</Button>
+                            <Button variant="outlined" fullWidth className="landing__login__btn" type="submit">Log in</Button>
                         </div>
                     </form>
                 </div>
@@ -70,7 +59,9 @@ function Landing() {
                         <Link style={{textDecoration: 'none'}} to="/signup">
                             <Button variant="outlined" fullWidth className="landing__join__btn btn1">Sign up</Button>
                         </Link>
-                        <Button variant="outlined" fullWidth className="landing__join__btn btn2">Log in</Button>
+                        <Link style={{textDecoration: 'none'}}  to="/login">
+                            <Button variant="outlined" fullWidth className="landing__join__btn btn2">Log in</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

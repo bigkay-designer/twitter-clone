@@ -3,7 +3,8 @@ import { Avatar } from '@material-ui/core';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import {ChatBubbleOutline,FavoriteBorder, DeleteOutline , Repeat} from '@material-ui/icons'
 import './css/posts.css'
-function Posts( {displayName,username,verified,text,image,avatar, keys, deletePost}) {
+function Posts( {displayName,username,verified,text,image,avatar, keys, deletePost, test}) {
+    
     return (
         <div className="posts"  key={keys}>
             <div className="posts__avatar">
