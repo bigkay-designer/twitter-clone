@@ -39,15 +39,15 @@ function Sidebar() {
             <div className="sidebar__container">
                 <Twitter className="sidebar__twitter" />
                 <ShowSidebar active text="home" Icons={HomeOutlined} />
-                <ShowSidebar text="explore" Icons={Search} />
+                <ShowSidebar  text="explore" Icons={Search} />
                 <ShowSidebar text="notifications" Icons={Notifications} />
                 <ShowSidebar text="messages" Icons={MailOutline} />
-                <ShowSidebar text="profile" Icons={PersonOutline} />
-                <ShowSidebar text="more" Icons={MoreHorizRounded} />
+                <ShowSidebar displayNone text="profile" Icons={PersonOutline} />
+                <ShowSidebar displayNone text="more" Icons={MoreHorizRounded} />
                 <Button variant="outlined" fullWidth className="sidebar__btn">Tweet</Button>
                 <div className="sidebar__user">
                     <h3> {name} </h3>
-                    <Button className="sideba__user__btn" onClick={logout} variant="outlined" >logout</Button>
+                    <Button className="sidebar__user__btn" onClick={logout} variant="outlined" >logout</Button>
                 </div>
             </div>
         </div>

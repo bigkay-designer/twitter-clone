@@ -192,4 +192,12 @@
 .feed::-webkit-scrollbar {
   display: none;
 }
+
+@media screen and (max-width: 450px) {
+  .feed {
+    grid-area: feed;
+    min-width: auto;
+    overflow: visible;
+  }
+}
 /*# sourceMappingURL=feed.css.map */

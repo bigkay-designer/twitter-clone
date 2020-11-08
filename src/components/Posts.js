@@ -13,10 +13,10 @@ function Posts( {displayName,username,verified,text,image,avatar, keys, deletePo
             <div className="posts__body">
                 <div className="posts__header">
                     <div className="posts__headerText">
-                        <h3>{displayName}
-                            <span className={`${!verified && "posts__verified--none" }`}> <VerifiedUserIcon className="posts__verified" /> </span>  
-                            <span className="span">@{username} </span>
-                        </h3>
+                        <h3>{displayName} </h3>
+                        <span className={`${!verified && "posts__verified--none" }`}> <VerifiedUserIcon className="posts__verified" /> </span>  
+                        <span className="span">@{username} </span>
+                        
                     </div>
                     <div className="posts__description">
                         <span> {text} </span>

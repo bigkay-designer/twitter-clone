@@ -93,6 +93,7 @@
 
 .landing .landing__aside .landing__twitter .landing__twitter__title {
   margin-bottom: 50px;
+  max-width: 300px;
 }
 
 .landing .landing__aside .landing__twitter .landing__twitter__title .landing__twitter--icon {
@@ -127,5 +128,58 @@
 
 .landing .landing__aside .landing__twitter .landing__twitter__join .btn2:hover {
   background-color: var(--twitter-bg);
+}
+
+@media screen and (max-width: 450px) {
+  .landing {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    overflow: hidden !important;
+  }
+  .landing .landing__main {
+    display: none;
+  }
+  .landing .landing__aside .landing__login {
+    padding: 10px;
+  }
+  .landing .landing__aside .landing__login form {
+    display: block;
+  }
+  .landing .landing__aside .landing__login form input {
+    width: 85%;
+    margin: 10px 0 10px 0;
+  }
+  .landing .landing__aside .landing__login form .landing__login__btn {
+    border-radius: 0;
+    width: 100px;
+    color: #fff;
+    background-color: #3f81d8;
+  }
+  .landing .landing__aside .landing__twitter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 80%;
+    margin: 110px 55px auto auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .landing {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .landing .landing__twitter .landing__twitter__join .btn1,
+  .landing .landing__twitter .landing__twitter__join .btn2 {
+    width: 300px !important;
+  }
 }
 /*# sourceMappingURL=landing.css.map */

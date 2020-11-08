@@ -127,3 +127,13 @@
     display: none;
   }
 }
+
+// media queries
+
+@media screen and (max-width: 450px) {
+  .feed {
+    grid-area: feed;
+    min-width: auto;
+    overflow: visible;
+  }
+}

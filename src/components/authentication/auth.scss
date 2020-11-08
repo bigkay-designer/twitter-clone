@@ -60,3 +60,23 @@
     }
   }
 }
+
+// media queries
+@media screen and (max-width: 450px) {
+  .signup {
+    .signup__main {
+      width: 80%;
+      height: 100vh;
+      margin: 40px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .signup {
+    .signup__main {
+      width: 30%;
+      margin: auto;
+    }
+  }
+}

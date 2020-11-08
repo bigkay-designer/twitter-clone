@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/login" component={Login} />
